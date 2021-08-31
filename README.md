@@ -62,7 +62,7 @@ The middleware logger can be customized with the following options:
 For example:
 
 ```ruby
-insert_after Grape::Middleware::Error, Grape::Middleware::Logger, {
+insert_after Grape::Middleware::Error, Grape::Middleware::Logy, {
   logger: Logger.new(STDERR),
   condensed: true,
   filter: Class.new { def filter(opts) opts.reject { |k, _| k.to_s == 'password' } end }.new,
